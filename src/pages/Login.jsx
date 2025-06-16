@@ -37,7 +37,8 @@ const Login = () => {
         localStorage.setItem("role", role);
 
         // Redirect based on role
-        window.location.href = role === "admin" ? "/admin" : "/dashboard";
+        navigate(role === "admin" ? "/admin" : "/dashboard");
+
       }
     } catch (error) {
       console.error("Login Error:", error);
