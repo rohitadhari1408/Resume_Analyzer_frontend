@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
+
 const ResumeManagement = () => {
   const [resumes, setResumes] = useState([]);
   const [selectedResumeUrl, setSelectedResumeUrl] = useState(null);
@@ -12,7 +14,7 @@ const ResumeManagement = () => {
 
   const fetchResumes = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/admin/resumes");
+      const response = await axios.get(`${baseUrl}/admin/resumes`);
       console.log("Fetched resumes:", response.data);
       setResumes(response.data);
     } catch (error) {
@@ -55,7 +57,7 @@ const ResumeManagement = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/admin/resume/${id}`);
+      await axios.delete(`${baseUrl}/admin/resume/${id}`);
       setResumes(resumes.filter((resume) => resume.resumeId !== id));
     } catch (err) {
       console.error("❌ Failed to delete resume:", err);

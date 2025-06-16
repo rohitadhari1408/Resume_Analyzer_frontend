@@ -15,13 +15,12 @@ const MainContent = ({ activeTab }) => {
       </div>
     );
   };
-  
-  
 
-  
-  
-  
 
-  
+
+
+
+
+
+
   export default MainContent;
-  

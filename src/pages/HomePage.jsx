@@ -11,12 +11,12 @@ import Howitworks from '../componets/Howitworks'
 import ResumeContent from '../componets/ResumeContent'
 
 export default function HomePage() {
-  
+
 
   return (
-    
 
-     
+
+
 
 
 
@@ -30,20 +30,21 @@ export default function HomePage() {
     <ResumeContent/>
     <Review/>
     <FAQ/>
-    <Footer/></>
+    <Footer/>
+    </>
 
-        
 
-      
-      
-     
 
-     
 
-      
-   
 
-      
-   
+
+
+
+
+
+
+
+
+
   );
 }

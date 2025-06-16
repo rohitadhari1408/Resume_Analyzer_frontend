@@ -2,7 +2,7 @@ import { useState } from "react";
 import Sidebar from '../componets/Sidebar'; // ✅ Check if Sidebar exists
 import MainContent from '../componets/MainContent';
 import { useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode"; 
+import { jwtDecode } from "jwt-decode";
 import { useEffect } from "react";
 // ✅ Check if MainContent exists
 

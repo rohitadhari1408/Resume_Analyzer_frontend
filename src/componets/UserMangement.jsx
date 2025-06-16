@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
+
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
 
@@ -8,7 +10,7 @@ const UserManagement = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/admin/users");
+        const response = await axios.get(`${baseUrl}/admin/users`);
         setUsers(response.data); // Assuming API returns an array of users
       } catch (error) {
         console.error("Error fetching users:", error);
@@ -20,7 +22,7 @@ const UserManagement = () => {
   // Delete user
   const handleDelete = async (userId) => {
     try {
-      await axios.delete(`http://localhost:5000/admin/users/${userId}`);
+      await axios.delete(`${baseUrl}/admin/users/${userId}`);
       setUsers(users.filter((user) => user._id !== userId));
     } catch (error) {
       console.error("Error deleting user:", error);
